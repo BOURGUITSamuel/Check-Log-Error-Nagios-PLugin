@@ -1,0 +1,41 @@
+==============================================================================
+                          NOTICE D'UTILISATION DU SCRIPT
+==============================================================================
+
+Ce script Bash est conçu pour surveiller la présence d'une chaîne d'erreur dans
+un fichier journal (log file) et retourner des codes de sortie appropriés pour
+Nagios, un système de surveillance informatique.
+
+Utilisation :
+-------------
+./script_nom.sh <chemin_fichier_log> <chaîne_erreur> <seuil_warning> <seuil_critical>
+
+Description :
+-------------
+Le script vérifie la présence de la chaîne d'erreur spécifiée dans le fichier de
+journal, en utilisant des seuils de warning et de criticité pour déterminer le
+niveau d'alerte. Il retourne un code de sortie correspondant à l'état du fichier
+journal, ce qui peut être utilisé par Nagios ou d'autres outils de surveillance.
+
+Arguments :
+-----------
+<chemin_fichier_log> : Chemin absolu du fichier journal à surveiller.
+<chaîne_erreur>      : Chaîne à rechercher dans le fichier journal.
+<seuil_warning>      : Nombre minimal d'occurrences pour déclencher un avertissement.
+<seuil_critical>     : Nombre minimal d'occurrences pour déclencher une alerte critique.
+
+Exemple d'utilisation :
+-----------------------
+./script_nom.sh /chemin/vers/fichier.log "Erreur critique" 5 10
+
+Dans cet exemple, le script surveillera le fichier journal /chemin/vers/fichier.log
+et déclenchera un avertissement si la chaîne "Erreur critique" est trouvée au moins
+5 fois, et une alerte critique si elle est trouvée au moins 10 fois.
+
+Note :
+------
+Assurez-vous que le fichier journal spécifié existe et que les chemins sont
+correctement spécifiés. Ce script est conçu pour être utilisé dans un environnement
+de surveillance Nagios, mais peut également être utilisé indépendamment.
+
+==============================================================================
