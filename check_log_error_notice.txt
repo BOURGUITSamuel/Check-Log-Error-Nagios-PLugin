@@ -1,5 +1,5 @@
 ==============================================================================
-                          NOTICE D'UTILISATION DU SCRIPT
+                         Notice d'utilisation - Script check_log_error.bash
 ==============================================================================
 
 Ce script Bash est conçu pour surveiller la présence d'une chaîne d'erreur dans
@@ -8,7 +8,7 @@ Nagios, un système de surveillance informatique.
 
 Utilisation :
 -------------
-./script_nom.sh <chemin_fichier_log> <chaîne_erreur> <seuil_warning> <seuil_critical>
+./check_log_error.bash <chemin_fichier_log> <chaîne_erreur> <seuil_warning> <seuil_critical>
 
 Description :
 -------------
@@ -24,9 +24,11 @@ Arguments :
 <seuil_warning>      : Nombre minimal d'occurrences pour déclencher un avertissement.
 <seuil_critical>     : Nombre minimal d'occurrences pour déclencher une alerte critique.
 
+- Affiche l'aide sur la manière d'utiliser le script si le nombre d'arguments est incorrect en activant la fonction "print_usage".
+
 Exemple d'utilisation :
 -----------------------
-./script_nom.sh /chemin/vers/fichier.log "Erreur critique" 5 10
+./check_log_error.bash /chemin/vers/fichier.log "Erreur critique" 5 10
 
 Dans cet exemple, le script surveillera le fichier journal /chemin/vers/fichier.log
 et déclenchera un avertissement si la chaîne "Erreur critique" est trouvée au moins
