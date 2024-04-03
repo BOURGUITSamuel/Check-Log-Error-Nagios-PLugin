@@ -41,3 +41,33 @@ correctement spécifiés. Ce script est conçu pour être utilisé dans un envir
 de surveillance Nagios, mais peut également être utilisé indépendamment.
 
 ==============================================================================
+# Configuration de la commande pour exécuter le script de vérification des logs
+
+define command {
+    command_name    check_log_errors
+    command_line    /chemin_vers_le_script/check_log_error.bash $ARG1$ $ARG2$ $ARG3$ $ARG4$
+}
+
+# Configuration du service pour surveiller un fichier journal avec Nagios
+
+define service {
+    use                     generic-service
+    host_name               hostname         ; Remplacer "hostname" par le nom de l'hôte où le fichier journal est situé
+    service_description     Check Log Errors
+    check_command           check_log_error!$ARG1$!$ARG2$!$ARG3$!$ARG4$
+    }
+
+# Description des arguments :
+#   - $ARG1$ : Chemin absolu du fichier de log à surveiller.
+#   - $ARG2$ : Chaîne à rechercher dans le fichier de log.
+#   - $ARG3$ : Nombre minimal d'occurrences pour déclencher un avertissement.
+#   - $ARG4$ : Nombre minimal d'occurrences pour déclencher une alerte critique.
+
+# Exemple d'utilisation :
+# Pour surveiller un fichier journal "/var/log/application.log" à la recherche de l'erreur "ERROR", avec un seuil de 5 pour l'avertissement et un seuil de 10 pour une alerte critique :
+# 1. Utilisez "/var/log/application.log" comme $ARG1$
+# 2. Utilisez "ERROR" comme $ARG2$
+# 3. Utilisez "5" comme $ARG3$
+# 4. Utilisez "10" comme $ARG4$
+
+# Assurez-vous que le script check_log_error.bash est correctement placé et exécutable sur l'hôte Nagios.
