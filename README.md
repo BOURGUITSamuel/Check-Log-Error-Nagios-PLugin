@@ -1,17 +1,36 @@
 # Check-Log-Error-NAgios-PLugin
+
 Nagios plugin to check Linux Log Errors
 
 # check_log_error.bash
 
+PLugin nagios permettant de récupérer une erreur spécifique dans un fichier de log d'un système d'exploitation Linux
+
 ## Getting Started
+
+Vous pouvez utiliser ce programme afin d'analyser une erreur spécifique dans le fichier de log de vos serveurs via l'outil de supervision Nagios.
 
 ### Prerequisites
 
+L'utilisation du programme nécessite l'acquisition d'un système d'exploitation Linux : Debian / CentOS / Ubuntu...
+
+Le programme a été conçu avec le language Bash
+
 ## Installing & Using
+
+1- Copiez le programme dans le répertoire de votre choix ou dans le dossier "plugins" de Nagios
+
+2- Configurer la commande et le service Nagios (Voir notice)
+
+3- Vous pouvez appliquer vos propres paramètres en modifiant le script
 
 ## Running the tests
 
+Le programme a été testé sur l'OS Debian 64bits
+
 ## Versioning
+
+Version 4.0
 
 ## Authors
 
