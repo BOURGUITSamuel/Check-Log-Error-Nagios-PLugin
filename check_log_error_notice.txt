@@ -45,7 +45,7 @@ de surveillance Nagios, mais peut également être utilisé indépendamment.
 # Configuration de la commande pour exécuter le script de vérification des logs
 
 define command {
-    command_name    check_log_errors
+    command_name    check_log_error
     command_line    /chemin_vers_le_script/check_log_error.bash $ARG1$ $ARG2$ $ARG3$ $ARG4$
 }
 
