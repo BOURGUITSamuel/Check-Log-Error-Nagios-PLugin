@@ -8,7 +8,9 @@ PLugin nagios permettant de récupérer une erreur spécifique dans un fichier d
 
 ## Getting Started
 
-Vous pouvez utiliser ce programme afin d'analyser une erreur spécifique dans le fichier de log de vos serveurs via l'outil de supervision Nagios.
+Vous pouvez utiliser ce programme afin d'analyser une erreur spécifique dans le fichier de log de vos serveurs via l'outil de supervision Nagios
+
+Le plugin détecte le nombre d'occurrences de l'erreur dans le fichier journal et affiche ce décompte
 
 ### Prerequisites
 
